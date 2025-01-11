@@ -678,7 +678,7 @@ footer p{
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 450px) {
 
     
 
@@ -803,3 +803,139 @@ footer p{
 
 
   }
+
+
+
+  @media (max-width: 375px) {
+
+    .home-content{
+        position: absolute;
+    top: 10;
+    left: 5px;
+    text-align: center;
+    }
+
+
+    
+
+    .home-content h1{
+        text-align: center;
+        font-size: 34px;
+      
+}
+
+.home-content h2{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+    .hamburger {
+      display: block;
+      z-index: 1;
+      cursor: pointer;
+    }
+  
+    .nav-list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 40vh; /* Ajuste o tamanho conforme necessário */
+      background: #00abf0;
+      clip-path: circle(40px at 90% -15%);
+      transition: 1s ease-out;
+  
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px; /* Adiciona um pequeno espaço entre os itens */
+    
+      pointer-events: none;
+    }
+  
+    .nav-list a {
+      font-size: 20px; /* Reduz o tamanho da fonte */
+      opacity: 0;
+    }
+  
+    .nav-list li:nth-child(1) a {
+      transition: 0.5s 0.2s;
+    }
+  
+    .nav-list li:nth-child(2) a {
+      transition: 0.5s 0.4s;
+    }
+  
+    .nav-list li:nth-child(3) a {
+      transition: 0.5s 0.6s;
+    }
+  
+    /* Estilos ativos */
+    .nav.active .nav-list {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+    }
+  
+    .nav.active .nav-list a {
+      opacity: 1;
+    }
+  
+    .nav.active .hamburger {
+      position: fixed;
+      top: 26px;
+      right: 16px;
+      border-top-color: transparent;
+    }
+  
+    .nav.active .hamburger::before {
+      transform: rotate(135deg);
+    }
+  
+    .nav.active .hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+  
+    .flex {
+      display: flex;
+      flex-direction: column;  /* Alinha os itens verticalmente */
+      justify-content: flex-start;  /* Garante que as divs fiquem alinhadas no topo */
+    }
+  
+    .img-sobre img {
+      text-align: center;
+      margin-left: 0;  /* Remove a margem esquerda */
+      max-width: 90%;  /* Limita a largura máxima da imagem */
+    }
+  
+    .txt-sobre p, h1 {
+      text-align: center;
+      margin-left: 0;
+      font-size: 16px;  /* Reduz o tamanho da fonte para cabeçalhos e parágrafos */
+    }
+  
+    .imgservices {
+      display: grid;
+      place-items: center; /* Centraliza itens horizontal e verticalmente */
+      grid-template-columns: 1fr; /* Define apenas 1 coluna */
+      grid-gap: 15px; /* Menor espaçamento entre os itens */
+      background-color: #f4f4f4;
+      padding: 20px; /* Diminui o padding para caber melhor na tela */
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+  
+    .title {
+      width: 120px; /* Reduz a largura da imagem */
+      height: auto; /* Mantém a proporção */
+    }
+  }
+  
