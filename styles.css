@@ -546,11 +546,14 @@ section.sobre .flex{
 }
 
 .site2{
-    background-image: url(./img/img/cats.jpg);
+    background-image: url(./img/img/esportes.jpg);
 }
 
 .site3{
-    background-image: url(./img/img/cats.jpg);
+    background-image: url(./img/img/Eventos.jpg);
+}
+.site4{
+    background-image: url(./img/img/Proffisional.jpg);
 }
 
 
