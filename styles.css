@@ -160,6 +160,7 @@ body {
 }
 
 .btn-box a {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +176,7 @@ body {
     letter-spacing: 1px;
     z-index: 1;
     overflow: hidden;
-    transition: 0.5s;
+    
 }
 
 .btn-box a:hover {
@@ -187,7 +188,7 @@ body {
     color: #00abf0;
 }
 
-.btn-box a:nth-child(2):hover {
+.btn-box a:nth-child(2):before {
     color: #081b29;
 }
 
@@ -200,7 +201,7 @@ body {
     height: 100%;
     background: #081b29;
     z-index: -1;
-    transition: 0.5s;
+    transition: .5s;
 }
 
 .btn-box a:hover::before {
