@@ -677,6 +677,30 @@ footer p{
 }
 
 
+ @media (max-width: 375px) {
+
+    .home-content{
+        position: absolute;
+    top: 10;
+    left: 1vh;
+    text-align: center;
+    }
+
+
+    
+
+    .home-content h1{
+        text-align: center;
+        font-size: 6vh;
+      
+}
+
+.home-content h2{
+    font-size: 2vh;
+}
+
+
+
 
 @media (max-width: 450px) {
 
@@ -806,28 +830,7 @@ footer p{
 
 
 
-  @media (max-width: 375px) {
-
-    .home-content{
-        position: absolute;
-    top: 10;
-    left: 5px;
-    text-align: center;
-    }
-
-
-    
-
-    .home-content h1{
-        text-align: center;
-        font-size: 34px;
-      
-}
-
-.home-content h2{
-    font-size: 20px;
-}
-
+ 
 
 
 
