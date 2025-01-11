@@ -521,8 +521,7 @@ footer p {
     
 
 .home-sci  {
-   height: 1vh;
-   text-align: center;
+   display: none;
     
     
    
