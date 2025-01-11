@@ -182,7 +182,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background:#f6f6f6;
+    background:#0a0000a1; ;
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
     color: white;
@@ -208,7 +208,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #f6f6f6 ;
+    background:#0a0000a1; 
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s;
 }
@@ -231,7 +231,7 @@ body {
         right: 0;
         width: 100%;
         height: 100%;
-        background:#f6f6f6;
+        background:#0a0000a1;
         animation: showRight 1s ease forwards;
         animation-delay: 1.9s;
         z-index: 2;
@@ -316,7 +316,7 @@ justify-content: space-between;
     right: 0;
     width: 100%;
     height: 100%;
-    background:#f6f6f6;
+    background:#0a0000a1; ;
     animation: showRight 1s ease forwards;
     animation-delay: 2s;
     z-index: 2;
