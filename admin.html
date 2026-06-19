@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WN Studio — Painel administrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="./index.html"><span>WN</span><div><strong>Studio</strong><small>Content OS</small></div></a>
+    <nav><button class="active" data-tab="overview"><i>⌁</i> Visão geral</button><button data-tab="photos"><i>▧</i> Portfólio</button><button data-tab="content"><i>✎</i> Textos do site</button><button data-tab="comments"><i>◌</i> Depoimentos</button></nav>
+    <div class="sidebar-foot"><div class="avatar">WN</div><div><strong>Wemerson</strong><small>Administrador</small></div><button id="logout" title="Bloquear painel">↪</button></div>
+  </aside>
+  <main>
+    <header><div><button class="mobile-menu" aria-label="Abrir menu">☰</button><p>PAINEL ADMINISTRATIVO</p><h1 id="page-title">Visão geral</h1></div><div class="header-actions"><a href="./index.html" target="_blank">Ver site <span>↗</span></a><button class="primary" data-go="photos">+ Nova foto</button></div></header>
+
+    <section class="panel active" id="overview">
+      <div class="welcome"><div><span>ESTÚDIO ONLINE</span><h2>Olá, Wemerson.</h2><p>Seu portfólio está pronto para receber novas histórias.</p></div><div class="pulse"><i></i> Site publicado</div></div>
+      <div class="stats"><article><p>Fotos publicadas</p><strong id="photo-count">0</strong><span>no portfólio</span></article><article><p>Depoimentos</p><strong id="comment-count">0</strong><span>de clientes</span></article><article><p>Armazenamento local</p><strong id="storage-used">0 KB</strong><span>neste navegador</span></article></div>
+      <div class="grid-2"><article class="card"><div class="card-title"><div><p>ATALHOS</p><h3>O que você quer fazer?</h3></div></div><div class="quick"><button data-go="photos"><i>＋</i><span><strong>Adicionar fotos</strong><small>Atualize seu portfólio</small></span><b>→</b></button><button data-go="comments"><i>“</i><span><strong>Novo depoimento</strong><small>Cadastre a fala de um cliente</small></span><b>→</b></button><button data-go="content"><i>✎</i><span><strong>Editar apresentação</strong><small>Altere os textos principais</small></span><b>→</b></button></div></article><article class="card"><div class="card-title"><div><p>ÚLTIMAS FOTOS</p><h3>Portfólio</h3></div><button data-go="photos">Ver todas</button></div><div class="recent-grid" id="recent-photos"></div></article></div>
+    </section>
+
+    <section class="panel" id="photos">
+      <div class="section-head"><div><p>PORTFÓLIO</p><h2>Gerencie suas fotos</h2></div><button class="primary" id="open-upload">+ Adicionar fotos</button></div>
+      <div class="toolbar"><input id="photo-search" placeholder="Buscar por título..."><select id="photo-filter"><option value="all">Todas as categorias</option><option value="eventos">Eventos</option><option value="retratos">Retratos</option><option value="esportes">Esportes</option></select></div>
+      <div class="admin-gallery" id="admin-gallery"></div>
+    </section>
+
+    <section class="panel" id="content">
+      <div class="section-head"><div><p>CONTEÚDO</p><h2>Textos principais</h2></div></div>
+      <form class="content-form card" id="content-form"><label>Título da capa<small>Use &lt;em&gt;texto&lt;/em&gt; para o efeito contornado.</small><input name="title" required></label><label>Descrição da capa<textarea name="subtitle" rows="3" required></textarea></label><label>Apresentação “Sobre mim”<textarea name="about" rows="7" required></textarea></label><div class="form-actions"><span id="content-status"></span><button class="primary" type="submit">Salvar alterações</button></div></form>
+    </section>
+
+    <section class="panel" id="comments">
+      <div class="section-head"><div><p>DEPOIMENTOS</p><h2>Histórias dos clientes</h2></div><button class="primary" id="open-comment">+ Novo depoimento</button></div><div class="comments-list" id="comments-list"></div>
+    </section>
+  </main>
+
+  <dialog id="upload-modal"><form id="upload-form"><div class="modal-head"><div><p>NOVO CONTEÚDO</p><h2>Adicionar ao portfólio</h2></div><button type="button" data-close>×</button></div><label class="dropzone" id="dropzone"><input type="file" name="files" accept="image/*" multiple required><span>＋</span><strong>Arraste suas fotos ou clique aqui</strong><small>JPG, PNG ou WebP • até 4 MB por imagem</small></label><div id="file-preview"></div><div class="fields"><label>Título<input name="title" placeholder="Ex.: Festival de Inverno" required></label><label>Categoria<select name="category"><option value="eventos">Eventos</option><option value="retratos">Retratos</option><option value="esportes">Esportes</option></select></label></div><div class="modal-actions"><button type="button" class="secondary" data-close>Cancelar</button><button class="primary" type="submit">Publicar fotos</button></div></form></dialog>
+  <dialog id="comment-modal"><form id="comment-form"><div class="modal-head"><div><p>NOVO DEPOIMENTO</p><h2>Adicionar comentário</h2></div><button type="button" data-close>×</button></div><div class="fields"><label>Nome do cliente<input name="name" required></label><label>Tipo de trabalho<input name="event" placeholder="Ex.: Ensaio de casal" required></label></div><label>Depoimento<textarea name="quote" rows="5" required></textarea></label><div class="modal-actions"><button type="button" class="secondary" data-close>Cancelar</button><button class="primary" type="submit">Publicar depoimento</button></div></form></dialog>
+  <div class="login" id="login"><form id="login-form"><div class="login-logo">WN</div><p>ACESSO RESTRITO</p><h2>Bem-vindo ao Studio.</h2><span>Digite seu PIN para gerenciar o site.</span><input name="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••" required><small id="login-error"></small><button class="primary">Entrar no painel</button><em>PIN inicial: 2025</em></form></div>
+  <div class="toast" id="toast"></div><script src="./admin.js"></script>
+</body></html>
